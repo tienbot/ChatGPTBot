@@ -15,7 +15,8 @@ import { openai } from './openai.js'
 import { removeFile } from './utils.js'
 import { initCommand, processTextToChat, INITIAL_SESSION } from './logic.js'
 
-const bot = new Telegraf(config.get('TELEGRAM_TOKEN'))
+const bot = new TeleBot(process.env.TELEGRAM_BOT_TOKEN)
+// const bot = new Telegraf(config.get('TELEGRAM_TOKEN'))
 
 bot.use(session())
 
